@@ -10,25 +10,28 @@ import DashboardPage from "./pages/DashboardPage";
 import Layout from "./layout/Layout";
 import ProtectedLayout from "./layout/ProtectedLayout";
 import GuestLayout from "./layout/GuestLayout";
+import { TodoProvider } from "./context/TodoContext";
 
 const App = () => {
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route element={<GuestLayout />}>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/signin" element={<SigninPage />} />
-              <Route path="/signup" element={<SignupPage />} />
-            </Route>
+      <TodoProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route element={<GuestLayout />}>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/signin" element={<SigninPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+              </Route>
 
-            <Route element={<ProtectedLayout />}>
-              <Route path="/dashboard" element={<DashboardPage />} />
+              <Route element={<ProtectedLayout />}>
+                <Route path="/dashboard" element={<DashboardPage />} />
+              </Route>
             </Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </TodoProvider>
     </AuthProvider>
   );
 };

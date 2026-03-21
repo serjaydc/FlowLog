@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import AuthRoutes from "./routes/auth.route.js";
+import TodoRoutes from "./routes/todo.route.js";
 import cookieParser from "cookie-parser";
 
 dotenv.config();
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/auth", AuthRoutes);
+app.use("/tasks", TodoRoutes);
 
 connectDB().then(() => {
   app.listen(process.env.PORT, () => {
