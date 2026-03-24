@@ -2,7 +2,7 @@ import Todo from "../models/todo.model.js";
 
 export const todoCreate = async (req, res) => {
   try {
-    if (!req.body.title || !req.body.dueDate) {
+    if (!req.body.title) {
       return res.status(400).json({ message: "All fields are required" });
     }
 
@@ -20,6 +20,10 @@ export const todoCreate = async (req, res) => {
 export const todoRead = async (req, res) => {
   try {
     const todos = await Todo.find({ user: req.user._id });
+
+    if (!todos) {
+      return res.status(404).json({ message: "No todos found" });
+    }
 
     return res.status(200).json(todos);
   } catch (error) {

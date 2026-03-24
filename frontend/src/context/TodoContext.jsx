@@ -53,12 +53,14 @@ export const TodoProvider = ({ children }) => {
 
       const data = await res.json();
 
+      console.log(data);
+
       if (!res.ok) {
         setError(data.message);
         return;
       }
 
-      setTodos((prev) => [...prev, data]);
+      setTodos((prev) => [...prev, data.todo]);
     } catch (error) {
       setError(error.message);
     } finally {
@@ -87,7 +89,9 @@ export const TodoProvider = ({ children }) => {
         return;
       }
 
-      setTodos((prev) => prev.map((t) => (t._id === todo._id ? data : t)));
+      setTodos((prev) =>
+        prev.map((t) => (t._id === todo._id ? { ...t, ...todo } : t)),
+      );
     } catch (error) {
       setError(error.message);
     } finally {

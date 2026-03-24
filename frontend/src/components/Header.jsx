@@ -33,17 +33,16 @@ const Header = () => {
               <>
                 <Link
                   to="profile"
-                  className="flex items-center gap-1 border border-gray-300 rounded-lg px-8 py-2 hover:bg-gray-200 transition-colors duration-300 ease-in-out"
+                  className="flex items-center gap-1 bg-gray-900 rounded-lg px-8 py-2 text-white hover:bg-gray-700 transition-colors duration-300 ease-in-out"
                 >
                   <User />
                   <span>{user.username}</span>
                 </Link>
                 <button
                   onClick={signout}
-                  className="flex items-center gap-1 bg-gray-900 rounded-lg px-8 py-2 text-white hover:bg-gray-700 transition-colors duration-300 ease-in-out"
+                  className="border border-gray-300 rounded-lg px-8 py-2 hover:bg-gray-200 transition-colors duration-300 ease-in-out cursor-pointer"
                 >
                   <LogOut />
-                  <span>Sign Out</span>
                 </button>
               </>
             )}
