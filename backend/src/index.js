@@ -1,10 +1,13 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+
 import connectDB from "./config/db.js";
+
 import AuthRoutes from "./routes/auth.route.js";
 import TodoRoutes from "./routes/todo.route.js";
-import cookieParser from "cookie-parser";
+import MoodRoutes from "./routes/mood.route.js";
 
 dotenv.config();
 
@@ -21,6 +24,7 @@ app.use(cookieParser());
 
 app.use("/auth", AuthRoutes);
 app.use("/tasks", TodoRoutes);
+app.use("/board", MoodRoutes);
 
 connectDB().then(() => {
   app.listen(process.env.PORT, () => {

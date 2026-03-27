@@ -44,7 +44,7 @@ const CreateTodo = ({ onClose }) => {
             <label htmlFor="title" className="text-sm mb-1">
               Title
             </label>
-            <div className="flex items-center gap-2 bg-gray-200 rounded-md py-2 px-2 mb-4">
+            <div className="flex items-center gap-2 bg-neutral-200 border border-neutral-300 rounded-md py-2 px-2 mb-4">
               <input
                 type="text"
                 name="title"
@@ -59,7 +59,7 @@ const CreateTodo = ({ onClose }) => {
             <label htmlFor="description" className="text-sm mb-1">
               Description
             </label>
-            <div className="flex items-center gap-2 bg-gray-200 rounded-md py-2 px-2 mb-4">
+            <div className="flex items-center gap-2 bg-neutral-200 border border-neutral-300 rounded-md py-2 px-2 mb-4">
               <textarea
                 name="description"
                 id="description"
@@ -74,7 +74,7 @@ const CreateTodo = ({ onClose }) => {
               <label htmlFor="status" className="text-sm mb-1">
                 Status
               </label>
-              <div className="flex items-center gap-2 bg-gray-200 rounded-md py-2 px-2 mb-4">
+              <div className="flex items-center gap-2 bg-neutral-200 border border-neutral-300 rounded-md py-2 px-2 mb-4">
                 <select
                   name="status"
                   id="status"
@@ -92,7 +92,7 @@ const CreateTodo = ({ onClose }) => {
               <label htmlFor="priority" className="text-sm mb-1">
                 Priority
               </label>
-              <div className="flex items-center gap-2 bg-gray-200 rounded-md py-2 px-2 mb-4">
+              <div className="flex items-center gap-2 bg-neutral-200 border border-neutral-300 rounded-md py-2 px-2 mb-4">
                 <select
                   name="priority"
                   id="priority"
@@ -111,7 +111,7 @@ const CreateTodo = ({ onClose }) => {
             <label htmlFor="duedate" className="text-sm mb-1">
               Due Date (Optional)
             </label>
-            <div className="flex items-center gap-2 bg-gray-200 rounded-md py-2 px-2 mb-4">
+            <div className="flex items-center gap-2 bg-neutral-200 border border-neutral-300 rounded-md py-2 px-2 mb-4">
               <input
                 type="date"
                 name="duedate"
@@ -126,7 +126,7 @@ const CreateTodo = ({ onClose }) => {
             <button
               onClick={onClose}
               type="button"
-              className="border border-gray-300 rounded-lg px-8 py-2 hover:bg-gray-200 transition-colors duration-300 ease-in-out cursor-pointer"
+              className="border border-neutral-300 rounded-lg px-8 py-2 hover:bg-neutral-200 transition-colors duration-300 ease-in-out cursor-pointer"
             >
               Cancel
             </button>

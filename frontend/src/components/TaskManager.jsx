@@ -4,9 +4,10 @@ import { useTodo } from "../context/TodoContext";
 import TaskColumn from "./TaskColumn";
 import UpdateTodo from "./UpdateTodo";
 import CreateTodo from "./CreateTodo";
+import TasksCounter from "./TasksCounter";
 
 const TaskManager = () => {
-  const { todos, loading, error } = useTodo();
+  const { todos, error } = useTodo();
 
   const [activeTodo, setActiveTodo] = useState(null);
   const [isCreateOpen, setIsCreateOpen] = useState(false);
@@ -18,7 +19,7 @@ const TaskManager = () => {
   return (
     <div>
       <div className="bg-white rounded-xl p-2">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mb-4">
           <div>
             <h2 className="text-2xl font-bold">Task Manager</h2>
             <p className="text-neutral-500">Organize and track your tasks</p>
@@ -33,6 +34,7 @@ const TaskManager = () => {
             </button>
           </div>
         </div>
+        <TasksCounter tasksLength={todos.length} />
         {/* Tasks */}
         <div className="grid grid-cols-3 gap-4 mt-6">
           <TaskColumn
